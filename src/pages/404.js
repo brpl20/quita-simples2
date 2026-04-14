@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { SEO } from "../components/seo"
 
 const pageStyles = {
   color: "#232129",
@@ -28,7 +29,7 @@ const NotFoundPage = () => {
     <main style={pageStyles}>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
+        Sorry, we couldn't find what you were looking for.
         <br />
         {process.env.NODE_ENV === "development" ? (
           <>
@@ -46,4 +47,10 @@ const NotFoundPage = () => {
 
 export default NotFoundPage
 
-export const Head = () => <title>Not found</title>
+export const Head = () => (
+  <SEO
+    title="Página não encontrada – Quita Simples"
+    description="A página que você procura não foi encontrada. Volte para a página inicial da Quita Simples para explorar nossos serviços de compra de precatórios."
+    pathname="/404"
+  />
+)

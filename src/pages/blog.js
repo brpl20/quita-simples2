@@ -3,13 +3,14 @@ import { graphql, Link } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import * as styles from "../components/index.module.css"
+import { SEO } from "../components/seo"
 
 const BlogPage = ({ data }) => {
   const posts = data.allMarkdownRemark.nodes
   return (
-    <html lang="pt-BR">
+    <>
+      <Header />
       <main>
-        <Header />
         <div className={styles.blogContainer}>
           <h1>Blog</h1>
           <ul className={styles.blogList}>
@@ -23,15 +24,21 @@ const BlogPage = ({ data }) => {
             ))}
           </ul>
         </div>
-        <Footer />
       </main>
-    </html>
+      <Footer />
+    </>
   )
 }
 
 export default BlogPage
 
-export const Head = () => <title>Blog – Quita Simples</title>
+export const Head = () => (
+  <SEO
+    title="Blog – Quita Simples"
+    description="Leia artigos e novidades sobre precatórios, direitos creditórios e finanças no blog da Quita Simples. Informações úteis para quem quer vender seu precatório."
+    pathname="/blog"
+  />
+)
 
 export const query = graphql`
   query {

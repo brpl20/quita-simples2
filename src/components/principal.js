@@ -1,5 +1,5 @@
 import * as React from "react";
-import imagemIlustracao from "../images/ilustracao-quita-simples.png";
+import { StaticImage } from "gatsby-plugin-image";
 import * as styles from "../components/index.module.css";
 
 const Principal = () => (
@@ -12,9 +12,12 @@ const Principal = () => (
             </div>
 
             <div className={styles.div2}>
-                <img
+                <StaticImage
+                    src="../images/ilustracao-quita-simples.png"
                     alt="Mulher despreocupada, por que teve seu tempo salvo com a Quita Simples"
-                    src={imagemIlustracao}
+                    placeholder="blurred"
+                    loading="lazy"
+                    height={350}
                 />
             </div>
         </div>

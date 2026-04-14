@@ -1,15 +1,19 @@
 import * as React from "react"
 import * as styles from "../components/index.module.css";
-import logoBranca from "../images/logo-branca.png"
+import { StaticImage } from "gatsby-plugin-image";
 import { Link } from 'gatsby';
+
 const Footer = () => (
     <footer>
         <div className={styles.footerBackground}>
             <div className={styles.footerContainer}>
                 <div className={styles.footerLogo}>
-                    <img
-                        src={logoBranca}
+                    <StaticImage
+                        src="../images/logo-branca.png"
                         alt="Quita Simples logo branca"
+                        placeholder="blurred"
+                        loading="lazy"
+                        height={45}
                     />
                     <p>Simplificando o pagamento <br /> dos seus precatórios.</p>
                 </div>

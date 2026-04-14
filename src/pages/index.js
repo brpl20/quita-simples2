@@ -4,20 +4,28 @@ import Vender from "../components/vender";
 import Principal from "../components/principal";
 import Sobre from "../components/sobre";
 import Footer from "../components/footer";
+import { SEO } from "../components/seo";
 
 const IndexPage = () => {
   return (
-    <html lang="pt-BR">
+    <>
+      <Header />
       <main>
-        <Header />
         <Principal />
         <Vender />
         <Sobre />
-        <Footer />
       </main>
-    </html>
+      <Footer />
+    </>
   );
 };
 
 export default IndexPage;
-export const Head = () => <title>Quita Simples – Simplificando o pagamento dos seus precatórios</title>;
+
+export const Head = () => (
+  <SEO
+    title="Quita Simples – Simplificando o pagamento dos seus precatórios"
+    description="Compramos seu precatório de forma rápida e segura. Receba seu dinheiro à vista em até 24 horas. Solução simples para seus precatórios federais e estaduais."
+    pathname="/"
+  />
+);
