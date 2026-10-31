@@ -1,0 +1,23 @@
+# Robots da Quita Simples (quitasimples.com.br)
+#
+# O site e todo indexavel. Robos de busca de IA e buscas feitas a pedido do
+# usuario ficam liberados de forma explicita, para as paginas poderem
+# aparecer (com link) nas respostas do ChatGPT, do Claude e do Perplexity.
+#
+# O Cloudflare pode prefixar a este arquivo um bloco gerenciado (AI Crawl
+# Control). Bloqueio de robos de treino, se um dia for desejado, se configura
+# la; nao repetir aqui os user-agents que o Cloudflare gerencia, porque grupos
+# de mesmo nome se fundem e um Allow aqui anularia o Disallow de la.
+
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://quitasimples.com.br/sitemap-index.xml
